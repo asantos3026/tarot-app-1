@@ -9,6 +9,7 @@ import './App.css';
 import QuestionForm from './components/QuestionForm.js'
 import TarotContainer from './components/TarotContainer.js'
 
+
 import CARDS from './cardinfo'
 
 class App extends Component {
@@ -60,7 +61,6 @@ class App extends Component {
 
   displayCard( index ) {
     const { cards } = this.state
-
     const updatedCards = [ 
       ...cards.slice( 0, index ),
       Object.assign( {}, cards[ index ], { displayed: true }),
