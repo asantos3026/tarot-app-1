@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col, Grid } from 'react-bootstrap'
+import CARDS from '../cardinfo'
 
 export default class TarotLayout extends Component {
   render() {
@@ -16,7 +17,7 @@ export default class TarotLayout extends Component {
           </Row>
           <Row className="show-grid">
             <Col xs={3} md={2}></Col>
-            <Col xs={3} md={2}><img onClick={() => this.props.flipCard(2)} alt="" className="card-back" /></Col>
+            <Col xs={3} md={2}><img onClick={() => this.props.flipCard(2)} alt="" src={this.props.image}/></Col>
             <Col xs={3} md={2}></Col>
             <Col xs={3} md={2}><img onClick={() => this.props.flipCard(3)} alt="" className="card-back" /></Col>
           </Row>

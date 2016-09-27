@@ -18,3 +18,9 @@
   margin-bottom: 10px;
   border-radius: 6px;
 }
+
+.reverse-image {
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+  transform: rotate(180deg);
+}

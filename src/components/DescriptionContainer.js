@@ -10,7 +10,6 @@ export default class DescriptionContainer extends Component {
       </div>
     )
   }
-
   showCards() {
     const { cards } = this.props
 
