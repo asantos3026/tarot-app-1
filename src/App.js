@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { Row, Navbar, Grid } from 'react-bootstrap';
+
+import _ from 'lodash'
+
 import logo from './logo.gif';
 import './App.css';
+
 import QuestionForm from './components/QuestionForm.js'
-import TarotLayout from './components/TarotLayout.js'
+import TarotContainer from './components/TarotContainer.js'
+
+import CARDS from './cardinfo'
 
 class App extends Component {
   constructor(props) {
@@ -36,14 +42,32 @@ class App extends Component {
 
   getChild() {
     if( this.state.formSubmitted ) {
-      return <TarotLayout {...this.state} />
+      return <TarotContainer {...this.state} flipCard={this.displayCard.bind(this)} />
     } else {
       return <QuestionForm submitForm={this.questionFormSubmitted.bind(this)} />
     }
   }
 
   questionFormSubmitted(question, name) {
-    this.setState({ question, name, formSubmitted: true })
+    this.setState({ question, name, formSubmitted: true, cards: this.drawCards() })
+  }
+
+  drawCards() {
+    return  CARDS.slice( 0, 10 ).map( card => 
+      Object.assign( {}, card, { displayed: false, upright: _.sample([ true, false ]) } )
+    )
+  }
+
+  displayCard( index ) {
+    const { cards } = this.state
+
+    const updatedCards = [ 
+      ...cards.slice( 0, index ),
+      Object.assign( {}, cards[ index ], { displayed: true }),
+      ...cards.slice( index + 1 )
+    ]
+
+    this.setState({ cards: updatedCards })
   }
 }
 
