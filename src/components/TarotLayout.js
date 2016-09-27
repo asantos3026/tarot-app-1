@@ -21,8 +21,9 @@ export default class TarotLayout extends Component {
             <Col xs={3} md={2}></Col>
             <Col xs={3} md={2}><img className="img-rounded" src="http://placehold.it/171x180" /></Col>
           </Row>
-           <Row className="show-grid">
+           <Row className="relative">
             <Col xs={3} md={2}><img className="img-rounded" src="http://placehold.it/171x180" /></Col>
+            <div className="over-layer"><img className="img-rounded" src="http://placehold.it/171x180" /></div>
             <Col xs={3} md={2}><img className="img-rounded" src="http://placehold.it/171x180" /></Col>
             <Col xs={3} md={2}><img className="img-rounded" src="http://placehold.it/171x180" /></Col>
             <Col xs={3} md={2}><img className="img-rounded" src="http://placehold.it/171x180" /></Col>
