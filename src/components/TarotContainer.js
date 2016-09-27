@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import TarotLayout from './TarotLayout'
 import DescriptionContainer from './DescriptionContainer'
 
