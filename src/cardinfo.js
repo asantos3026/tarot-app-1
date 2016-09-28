@@ -313,7 +313,7 @@ const cardinfo = {
   majorHierophant: [
     "Hierophant",
     "Hierophant represents group consciousness, religion, your belief system, ceremony, traditions, kindness, charity, giving guidance in the form of spiritual counselling.",
-    "Hierophant reversed denotes prudence, silliness and hypocrisy. There are rules but no knowledge of why these rules are of importance. The ego is without guidance. There is an inflexibility in the system and in the people of the system. It can be an institution who control information and the leaders make themselves rich while the poor remains poor."
+    "Hierophant reversed denotes prudence, silliness and hypocrisy. There are rules but no knowledge of why these rules are of importance. The ego is without guidance. There is an inflexibility in the system and in the people of the system. It can be an institution who controls information and the leaders make themselves rich while the poor remain poor."
   ],
   majorLovers: [
     "Lovers",

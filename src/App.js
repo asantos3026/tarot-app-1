@@ -12,7 +12,7 @@ import TarotContainer from './components/TarotContainer.js'
 import CARDS from './cardinfo'
 // console.log( CARDS.map( c => `.${c.cardClassName} { background-image: url("${c.image}"); }` ).join( "\n"))
 
-import { CELTIC_CROSS, CELTIC_PYRAMID } from './layouts'
+import { CELTIC_CROSS, CELTIC_PYRAMID, YOU_ME_US } from './layouts'
 
 class App extends Component {
   constructor(props) {
@@ -56,7 +56,7 @@ class App extends Component {
   }
 
   drawCards() {
-    const layout = CELTIC_PYRAMID
+    const layout = YOU_ME_US
 
     return  CARDS.slice( 0, layout.length ).map( (card, index) => 
       Object.assign( {}, card, { displayed: false, upright: _.sample([ true, false ]) }, layout[ index ] )
