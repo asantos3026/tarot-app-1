@@ -404,6 +404,7 @@ export default _.shuffle( Object.keys( cardinfo ).map( fileNameKey => {
     name: cardData[ NAME ],
     normalDescription: cardData[ NORMAL_DESCRIPTION ],
     reverseDescription: cardData[ REVERSE_DESCRIPTION ],
+    cardClassName: fileNameKey,
     image: `https://mkleincreative.files.wordpress.com/2016/09/${fileNameKey.toLowerCase()}.jpg`
   }
 }))

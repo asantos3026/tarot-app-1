@@ -10,11 +10,12 @@ export default class DescriptionContainer extends Component {
       </div>
     )
   }
+
   showCards() {
     const { cards } = this.props
 
     return cards.filter( card => card.displayed ).map( (card, index) =>
-      <div>
+      <div key={`card-description-${index}`}>
         <CardComponent {...card} key={`image-${index}`} />
         <CardDescription {...card} key={`description-${index}`} />
       </div>
