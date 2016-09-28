@@ -25,11 +25,11 @@ What does quality code look like?
 
 
 ### Required
-- [ ] Application is deployed on heroku
-- [ ] Have 1 card layout
-- [ ] Randomly present a set of 9 cards in a celtic cross
-- [ ] Show cards on page with description
-- [ ] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
+- [x] Application is deployed on heroku
+- [x] Have 1 card layout
+- [x] Randomly present a set of 9 cards in a celtic cross
+- [x] Show cards on page with description
+- [x] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
 
 ---
 
