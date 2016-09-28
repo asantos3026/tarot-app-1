@@ -9,8 +9,10 @@ import './App.css';
 import QuestionForm from './components/QuestionForm.js'
 import TarotContainer from './components/TarotContainer.js'
 
-
 import CARDS from './cardinfo'
+// console.log( CARDS.map( c => `.${c.cardClassName} { background-image: url("${c.image}"); }` ).join( "\n"))
+
+import { CELTIC_CROSS, CELTIC_PYRAMID } from './layouts'
 
 class App extends Component {
   constructor(props) {
@@ -54,13 +56,16 @@ class App extends Component {
   }
 
   drawCards() {
-    return  CARDS.slice( 0, 10 ).map( card => 
-      Object.assign( {}, card, { displayed: false, upright: _.sample([ true, false ]) } )
+    const layout = CELTIC_PYRAMID
+
+    return  CARDS.slice( 0, layout.length ).map( (card, index) => 
+      Object.assign( {}, card, { displayed: false, upright: _.sample([ true, false ]) }, layout[ index ] )
     )
   }
 
   displayCard( index ) {
     const { cards } = this.state
+
     const updatedCards = [ 
       ...cards.slice( 0, index ),
       Object.assign( {}, cards[ index ], { displayed: true }),
