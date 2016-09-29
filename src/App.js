@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Navbar, Grid } from 'react-bootstrap';
+import { Row, Nav, NavItem, Navbar, Grid } from 'react-bootstrap';
 
 import _ from 'lodash'
 
@@ -8,6 +8,7 @@ import './App.css';
 
 import QuestionForm from './components/QuestionForm.js'
 import TarotContainer from './components/TarotContainer.js'
+import NavbarModal from './components/NavbarModal.js'
 
 import CARDS from './cardinfo'
 // console.log( CARDS.map( c => `.${c.cardClassName} { background-image: url("${c.image}"); }` ).join( "\n"))
@@ -24,13 +25,17 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#"><img src={logo} className="App-logo" alt="logo" /></a>
-            </Navbar.Brand>
-          </Navbar.Header>
-        </Navbar>
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <a href="#">React Tarot App</a>
+          </Navbar.Brand>
+        </Navbar.Header>
+        <Nav>
+          <NavItem><NavbarModal /></NavItem>
+          <NavItem eventKey={2} href="#">Link</NavItem>
+        </Nav>
+      </Navbar>
 
         <Grid>
           <Row>

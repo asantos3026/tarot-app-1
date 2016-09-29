@@ -3,6 +3,10 @@
   width: 50px;
 }
 
+.navbar-link {
+  margin-top: 20px;
+}
+
 .img-rounded {
   border-radius: 6px;
   height: 190px;
