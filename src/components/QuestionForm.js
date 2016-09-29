@@ -27,7 +27,7 @@ export default class QuestionForm extends Component {
         <FormGroup>
           <Col smOffset={2} sm={10}>
             <Button type="submit" onClick={this.submitClicked.bind(this)}>
-              Submit
+              Perform Reading
             </Button>
           </Col>
         </FormGroup>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Navbar, Grid } from 'react-bootstrap';
-
-import _ from 'lodash'
+import NavBar from './NavBar';
+import _ from 'lodash';
 
 import logo from './logo.gif';
 import './App.css';
@@ -26,6 +26,7 @@ class App extends Component {
       <div>
         <Navbar>
           <Navbar.Header>
+            <NavBar />
             <Navbar.Brand>
               <a href="#"><img src={logo} className="App-logo" alt="logo" /></a>
             </Navbar.Brand>
