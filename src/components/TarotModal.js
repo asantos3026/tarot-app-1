@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
+
 import { Modal, Button } from 'react-bootstrap'
 
-class NavbarModal extends Component {
-  hideNavbarModal() {
-    this.props.hideNavbarModal()
+export default class TarotModal extends Component { 
+
+hideModal() {
+    this.props.hideModal()
   }
 
   render() {
     return (
-      <Modal show={true} onHide={this.hideNavbarModal.bind(this)}
+      <Modal show={true} onHide={this.hideModal.bind(this)}
         dialogClassName="custom-modal">
 
         <Modal.Header closeButton>
@@ -16,16 +18,13 @@ class NavbarModal extends Component {
         </Modal.Header>
 
         <Modal.Body>
-          <h4>Question</h4>
           {this.props.children}
         </Modal.Body>
 
         <Modal.Footer>
-          <Button onClick={this.hideNavbarModal}>Close</Button>
+          <Button onClick={this.hideModal.bind(this)}>Close</Button>
         </Modal.Footer>
       </Modal>
     )
   }
 }
-
-export default NavbarModal

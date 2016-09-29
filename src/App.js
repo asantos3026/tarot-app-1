@@ -21,15 +21,15 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { question: '', name: '', formSubmitted: false, cards: [], showModal: false }
+    this.state = { question: '', name: '', formSubmitted: false, cards: [], showNavbarModal: false }
   }
 
-  showModal() {
-    this.setState({ showModal: true })
+  showNavbarModal() {
+    this.setState({ showNavbarModal: true })
   }
 
-  hideModal() {
-    this.setState({ showModal: false })
+  hideNavbarModal() {
+    this.setState({ showNavbarModal: false })
   }
 
   render() {
@@ -44,7 +44,7 @@ class App extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem onSelect={this.showModal.bind(this)}>What answers do you seek?</NavItem>
+              <NavItem onSelect={this.showNavbarModal.bind(this)}>What answers do you seek?</NavItem>
               <NavItem eventKey={2} href="#">Link</NavItem>
             </Nav>
           </Navbar.Collapse>
@@ -71,9 +71,9 @@ class App extends Component {
   }
 
   getModal() {
-    if( this.state.showModal ) {
+    if( this.state.showNavbarModal ) {
       return ( 
-        <NavbarModal hideModal={this.hideModal.bind(this)}> 
+        <NavbarModal hideNavbarModal={this.hideNavbarModal.bind(this)}> 
           <QuestionForm submitForm={this.questionFormSubmitted.bind(this)} />
         </NavbarModal>
       ) 
@@ -83,7 +83,7 @@ class App extends Component {
   }
 
   questionFormSubmitted(question, name) {
-    this.setState({ question, name, formSubmitted: true, cards: this.drawCards(), showModal: false })
+    this.setState({ question, name, formSubmitted: true, cards: this.drawCards(), showNavbarModal: false })
   }
 
   drawCards() {
