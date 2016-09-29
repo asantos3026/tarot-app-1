@@ -7,6 +7,7 @@ export default class CardDescription extends Component {
     return (
       <div className='card-description'>
         <h4>{name}</h4>
+        <h5>{this.props.positionDescription}</h5>
         <p>{upright ? this.props.normalDescription : this.props.reverseDescription} </p>
       </div>
     )

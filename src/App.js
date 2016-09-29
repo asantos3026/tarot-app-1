@@ -12,6 +12,7 @@ import CARDS from './cardinfo'
 // console.log( CARDS.map( c => `.${c.cardClassName} { background-image: url("${c.image}"); }` ).join( "\n"))
 
 import { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH } from './layouts'
+import { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES } from './positioninfo'
 
 class App extends Component {
   constructor(props) {
@@ -57,11 +58,13 @@ class App extends Component {
 
   drawCards() {
     const layout = CELTIC_CROSS
+    const position = CELTIC_CROSS_DES
 
     return  CARDS.slice( 0, layout.length ).map( (card, index) => 
       Object.assign( {}, card, { 
         displayed: false, 
-        upright: _.sample([ true, false ]) }, 
+        upright: _.sample([ true, false ]),
+        positionDescription: position[ index ]}, 
         layout[ index ] 
       )
     )
