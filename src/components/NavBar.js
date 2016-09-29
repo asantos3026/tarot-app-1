@@ -1,25 +1,27 @@
 import React, {Component} from 'react'
 import QuestionForm from './QuestionForm'
-
+import { Modal, Button, ButtonToolbar } from 'react-bootstrap';
 
 export default class NavBar extends Component{
 
-    getInitialState() {
-      return {show: false};
-    },
+  constructor(props) {
+    super(props)
+
+    this.state = {show: false}
+  }
 
     showModal() {
-      this.setState({show: true});
-    },
+      this.setState({show: true})
+    }
 
     hideModal() {
-      this.setState({show: false});
-    },
+      this.setState({show: false})
+    }
 
     render() {
       return (
         <ButtonToolbar>
-          <Button bsStyle="primary" onClick={this.showModal}>
+          <Button bsStyle="primary" onClick={this.showModal.bind(this)}>
             Launch demo modal
           </Button>
 
@@ -37,10 +39,10 @@ export default class NavBar extends Component{
               
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={this.hideModal}>Close</Button>
+              <Button onClick={this.hideModal.bind(this)}>Close</Button>
             </Modal.Footer>
           </Modal>
         </ButtonToolbar>
-      );
+      )
     }
 }

@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Button } from 'react-bootstrap';
 import QuestionForm from './QuestionForm'
 
 
 const NavbarModal = React.createClass({
   getInitialState() {
-    return {show: false};
-  },
+    return {show: false}
+  }
 
   showModal() {
-    this.setState({show: true});
-  },
+    this.setState({show: true})
+  }
 
   hideModal() {
-    this.setState({show: false});
-  },
+    this.setState({show: false})
+  }
 
   render() {
     return (
