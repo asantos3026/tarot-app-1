@@ -8,7 +8,7 @@ import './App.css';
 
 import QuestionForm from './components/QuestionForm.js'
 import TarotContainer from './components/TarotContainer.js'
-
+import NavBar from './components/NavBar.js'
 import CARDS from './cardinfo'
 // console.log( CARDS.map( c => `.${c.cardClassName} { background-image: url("${c.image}"); }` ).join( "\n"))
 
