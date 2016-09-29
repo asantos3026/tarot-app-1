@@ -8,7 +8,7 @@ export default class TarotCard extends Component {
   }
 
   classNames() {
-    const { x, y, sideways, displayed, upright, name, cardClassName } = this.props
+    const { x, y, sideways, displayed, upright, cardClassName } = this.props
 
     const sidewaysClass = sideways ? ' sideways' : ''
     const uprightClass = upright ? '' : ' reverse-image'
