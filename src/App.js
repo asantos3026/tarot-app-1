@@ -103,13 +103,16 @@ class App extends Component {
   displayCard( index ) {
     const { cards } = this.state
 
-    const updatedCards = [ 
-      ...cards.slice( 0, index ),
-      Object.assign( {}, cards[ index ], { displayed: true }),
-      ...cards.slice( index + 1 )
-    ]
+    if( index < cards.length ) {
+      const updatedCards = [ 
+        ...cards.slice( 0, index ),
+        Object.assign( {}, cards[ index ], { displayed: true }),
+        ...cards.slice( index + 1 )
+      ]
 
-    this.setState({ cards: updatedCards })
+      this.setState({ cards: updatedCards })
+    }
+
   }
 }
 

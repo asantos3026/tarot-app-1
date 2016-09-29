@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
 
 export default class TarotCard extends Component {
-  flip() {
-    const { flipCard, cardIndex } = this.props
-
-    flipCard( cardIndex )
-  }
-
   classNames() {
     const { x, y, sideways, displayed, upright, cardClassName } = this.props
 
@@ -19,7 +13,7 @@ export default class TarotCard extends Component {
 
   render() {
     return (
-      <img onClick={this.flip.bind(this)} alt="" className={this.classNames()} />
+      <img alt="" className={this.classNames()} />
     )
   }
 }
