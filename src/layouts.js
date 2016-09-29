@@ -45,9 +45,7 @@ const CAREER_PATH = [
   { x: 7, y: 3, sideways: false },
   { x: 7, y: 5, sideways: false },
   { x: 5, y: 0, sideways: false },
-  { x: 5, y: 2, sideways: false },
-  { x: 5, y: 4, sideways: false },
-  { x: 5, y: 6, sideways: false }
+
 ]
 
 export { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH}
