@@ -37,7 +37,7 @@ const NavbarModal = React.createClass({
             <QuestionForm />
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.hideModal}>Close</Button>
+            <Button onClick={this.hideModal.bind(this)}>Close</Button>
           </Modal.Footer>
         </Modal>
       </div>

@@ -28,7 +28,7 @@ export default class NavBar extends Component{
           <Modal
             {...this.props}
             show={this.state.show}
-            onHide={this.hideModal}
+            onHide={this.hideModal.bind(this)}
             dialogClassName="custom-modal"
           >
             <Modal.Header closeButton>

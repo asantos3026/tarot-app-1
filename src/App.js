@@ -56,7 +56,7 @@ class App extends Component {
   }
 
   drawCards() {
-    const layout = TETRAKTYS, YOU_ME_US
+    const layout = TETRAKTYS
 
     return  CARDS.slice( 0, layout.length ).map( (card, index) => 
       Object.assign( {}, card, { 
