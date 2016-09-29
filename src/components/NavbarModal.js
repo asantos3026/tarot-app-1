@@ -1,48 +1,31 @@
-import React, { Component } from 'react';
-import { Modal, Button, Button } from 'react-bootstrap';
-import QuestionForm from './QuestionForm'
+import React, { Component } from 'react'
+import { Modal, Button } from 'react-bootstrap'
 
-
-const NavbarModal = React.createClass({
-  getInitialState() {
-    return {show: false}
-  }
-
-  showModal() {
-    this.setState({show: true})
-  }
-
+class NavbarModal extends Component {
   hideModal() {
-    this.setState({show: false})
+    this.props.hideModal()
   }
 
   render() {
     return (
-      <div>
-        <a href="#" onClick={this.showModal}>
-          What answers do you seek?
-        </a>
+      <Modal show={true} onHide={this.hideModal.bind(this)}
+        dialogClassName="custom-modal">
 
-        <Modal
-          {...this.props}
-          show={this.state.show}
-          onHide={this.hideModal}
-          dialogClassName="custom-modal"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-lg">React Tarot App</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <h4>Wrapped Text</h4>
-            <QuestionForm />
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.hideModal.bind(this)}>Close</Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
-    );
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-lg">Modal heading</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <h4>Question</h4>
+          {this.props.children}
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button onClick={this.hideModal}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    )
   }
-});
+}
 
 export default NavbarModal

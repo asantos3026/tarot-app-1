@@ -1,37 +1,54 @@
 import React, { Component } from 'react';
-import { Row, Navbar, Grid } from 'react-bootstrap';
+import { Row, Navbar, Nav, NavItem, Grid } from 'react-bootstrap';
 import _ from 'lodash';
 
-import logo from './logo.gif';
+// import logo from './logo.gif';
 import './App.css';
 
 import QuestionForm from './components/QuestionForm.js'
 import TarotContainer from './components/TarotContainer.js'
-import NavBar from './components/NavBar.js'
+import NavbarModal from './components/NavbarModal.js'
 import CARDS from './cardinfo'
 // console.log( CARDS.map( c => `.${c.cardClassName} { background-image: url("${c.image}"); }` ).join( "\n"))
 
-import { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH } from './layouts'
-import { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES } from './positioninfo'
+import { CELTIC_CROSS } from './layouts'
+import { CELTIC_CROSS_DES } from './positioninfo'
+
+// import { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH } from './layouts'
+// import { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES } from './positioninfo'
 
 class App extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { question: '', name: '', formSubmitted: false, cards: [] }
+    this.state = { question: '', name: '', formSubmitted: false, cards: [], showModal: false }
+  }
+
+  showModal() {
+    this.setState({ showModal: true })
+  }
+
+  hideModal() {
+    this.setState({ showModal: false })
   }
 
   render() {
     return (
       <div>
-        <Navbar>
+       <Navbar >
           <Navbar.Header>
-            <NavBar />
             <Navbar.Brand>
-              <a href="#"><img src={logo} className="App-logo" alt="logo" /></a>
+              <a href="#">React Tarot</a>
             </Navbar.Brand>
+            <Navbar.Toggle />
           </Navbar.Header>
-        </Navbar>
+          <Navbar.Collapse>
+            <Nav>
+              <NavItem onSelect={this.showModal.bind(this)}>What answers do you seek?</NavItem>
+              <NavItem eventKey={2} href="#">Link</NavItem>
+            </Nav>
+          </Navbar.Collapse>
+       </Navbar>
 
         <Grid>
           <Row>
@@ -40,6 +57,7 @@ class App extends Component {
 
           {this.getChild()}
         </Grid>
+        {this.getModal()}
       </div>
     )
   }
@@ -48,12 +66,24 @@ class App extends Component {
     if( this.state.formSubmitted ) {
       return <TarotContainer {...this.state} flipCard={this.displayCard.bind(this)} />
     } else {
-      return <QuestionForm submitForm={this.questionFormSubmitted.bind(this)} />
+      return <div>Landing page content</div>
+    }
+  }
+
+  getModal() {
+    if( this.state.showModal ) {
+      return ( 
+        <NavbarModal hideModal={this.hideModal.bind(this)}> 
+          <QuestionForm submitForm={this.questionFormSubmitted.bind(this)} />
+        </NavbarModal>
+      ) 
+    } else {
+      return <div></div>
     }
   }
 
   questionFormSubmitted(question, name) {
-    this.setState({ question, name, formSubmitted: true, cards: this.drawCards() })
+    this.setState({ question, name, formSubmitted: true, cards: this.drawCards(), showModal: false })
   }
 
   drawCards() {
@@ -73,13 +103,16 @@ class App extends Component {
   displayCard( index ) {
     const { cards } = this.state
 
-    const updatedCards = [ 
-      ...cards.slice( 0, index ),
-      Object.assign( {}, cards[ index ], { displayed: true }),
-      ...cards.slice( index + 1 )
-    ]
+    if( index < cards.length ) {
+      const updatedCards = [ 
+        ...cards.slice( 0, index ),
+        Object.assign( {}, cards[ index ], { displayed: true }),
+        ...cards.slice( index + 1 )
+      ]
 
-    this.setState({ cards: updatedCards })
+      this.setState({ cards: updatedCards })
+    }
+
   }
 }
 
