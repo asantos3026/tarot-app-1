@@ -1,6 +1,6 @@
 const CELTIC_CROSS_DES = [
-      'The card not shown but at the center of the cross_DES, represents the atmosphere surrounding the central issue.',
-      'The card visible at the center of the cross represents the obstacle that stands in your way - it may even be something that sounds good but is not actually to your benefit.',
+      'The card at the center of the cross, represents the atmosphere surrounding the central issue.',
+      'The card turned sideways at the center of the cross represents the obstacle that stands in your way - it may even be something that sounds good but is not actually to your benefit.',
       'The card at the top of the cross represents your goal, or the best you can achieve without a dramatic change of priorities.',
       'The card at the bottom of the cross represents the foundation on which the situation is based.',
       'The card at the left of the cross represents a passing influence or something to be released.',
