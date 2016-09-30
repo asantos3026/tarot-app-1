@@ -38,18 +38,10 @@ class App extends Component {
   render() {
     return (
       <div>
-
         <Grid>
-
           {this.getChild()}
         </Grid>
         {this.getModal()}
-        <div className="video-banner">
-          <Video autoPlay loop muted poster="">
-            <source src="https://s3.amazonaws.com/distill-videos/videos/processed/1716/Northernlights2_HD.mp4.mp4" type="video/mp4" />
-          </Video>
-          <a href="#" onClick={this.showNavbarModal.bind(this)}><h1>What Answers Do You Seek?</h1></a> 
-        </div>
       </div>
     )
   }
@@ -57,7 +49,16 @@ class App extends Component {
   getChild() {
     if( this.state.formSubmitted ) {
       return <TarotContainer {...this.state} flipCard={this.displayCard.bind(this)} />
-    } 
+    } else {
+      return (
+      <div className="video-banner">
+        <Video autoPlay loop muted poster="">
+          <source src="https://s3.amazonaws.com/distill-videos/videos/processed/1716/Northernlights2_HD.mp4.mp4" type="video/mp4" />
+        </Video>
+        <a href="#" onClick={this.showNavbarModal.bind(this)}><h1>What Answers Do You Seek?</h1></a> 
+      </div>
+      )
+    }
   }
 
   getModal() {
