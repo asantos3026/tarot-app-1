@@ -12,9 +12,6 @@ export default class TarotContainer extends Component {
       <Grid>
         <h1>{question}</h1>
         <h2>{name}</h2>
-        <Button type="button" onClick={this.flipNextCard.bind(this)}>
-          Get your free reading
-        </Button>
         <TarotLayout cards={cards} flipCard={this.props.flipCard} />
         <DescriptionContainer cards={cards} />
       </Grid>
