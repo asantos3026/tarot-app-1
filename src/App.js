@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Row, Navbar, Nav, NavItem, Grid } from 'react-bootstrap';
+import { Grid } from 'react-bootstrap';
+import { default as Video } from 'react-html5video';
 import _ from 'lodash';
 
 // import logo from './logo.gif';
@@ -37,26 +38,7 @@ class App extends Component {
   render() {
     return (
       <div>
-       <Navbar >
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">React Tarot</a>
-            </Navbar.Brand>
-            <Navbar.Toggle />
-          </Navbar.Header>
-          <Navbar.Collapse>
-            <Nav>
-              <NavItem onSelect={this.showNavbarModal.bind(this)}>What answers do you seek?</NavItem>
-              <NavItem eventKey={2} href="#">Link</NavItem>
-            </Nav>
-          </Navbar.Collapse>
-       </Navbar>
-
         <Grid>
-          <Row>
-            <h2>React Tarot App</h2>
-          </Row>
-
           {this.getChild()}
         </Grid>
         {this.getModal()}
@@ -68,7 +50,14 @@ class App extends Component {
     if( this.state.formSubmitted ) {
       return <TarotContainer {...this.state} flipCard={this.displayCard.bind(this)} />
     } else {
-      return <div className="landing-page"><img src="https://media.giphy.com/media/h9FPJ4PMvNRRK/giphy.gif" /></div>
+      return (
+      <div className="video-banner">
+        <Video autoPlay loop muted poster="">
+          <source src="https://s3.amazonaws.com/distill-videos/videos/processed/1716/Northernlights2_HD.mp4.mp4" type="video/mp4" />
+        </Video>
+        <a href="#" onClick={this.showNavbarModal.bind(this)}><h1>What Answers Do You Seek?</h1></a> 
+      </div>
+      )
     }
   }
 
