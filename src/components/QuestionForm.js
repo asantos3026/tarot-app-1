@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { Form, FormGroup, FormControl, Col, Button, ControlLabel} from 'react-bootstrap'
+import { Form, FormGroup, FormControl, Col, Button, ControlLabel, DropdownButton, MenuItem } from 'react-bootstrap'
 
 export default class QuestionForm extends Component {
+  selectLayout(eventKey) { 
+    // call drawCards(eventKey) somehow
+    this.props.redrawCards(eventKey)
+    console.log(eventKey, "!!!")
+
+  }
+
   render() {
     return (
       <Form horizontal>
@@ -23,6 +30,16 @@ export default class QuestionForm extends Component {
             <FormControl type="text" placeholder="Name" ref="name" />
           </Col>
         </FormGroup>
+
+        <DropdownButton title="choose a layout" id="layoutDropdown">
+             <MenuItem eventKey="CELTIC_CROSS" onSelect={this.selectLayout.bind(this)}>Celtic Cross</MenuItem>
+             <MenuItem divider />
+             <MenuItem eventKey="TETRAKTYS" onSelect={this.selectLayout.bind(this)}>Tetraktys</MenuItem>
+             <MenuItem divider />
+             <MenuItem eventKey="YOU_ME_US" onSelect={this.selectLayout.bind(this)}>You, Me, Us</MenuItem>
+             <MenuItem divider />
+             <MenuItem eventKey="CAREER_PATH" onSelect={this.selectLayout.bind(this)}>Career Path</MenuItem>
+        </DropdownButton>
 
         <FormGroup>
           <Col smOffset={2} sm={10}>

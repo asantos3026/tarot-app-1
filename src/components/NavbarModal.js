@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 
+
 class NavbarModal extends Component {
   hideNavbarModal() {
     this.props.hideNavbarModal()
@@ -16,7 +17,6 @@ class NavbarModal extends Component {
         </Modal.Header>
 
         <Modal.Body>
-          <h4>Question</h4>
           {this.props.children}
         </Modal.Body>
 
