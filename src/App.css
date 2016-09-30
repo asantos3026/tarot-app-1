@@ -78,6 +78,9 @@ label {
   opacity: 1;
 }
 
+#root {
+  background-image: url('http://il6.picdn.net/shutterstock/videos/11313464/thumb/1.jpg')
+}
 
 .App-logo {
   height: 25px;
