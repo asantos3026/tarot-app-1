@@ -1,12 +1,13 @@
-video {
-  display: inline-block;
-  vertical-align: baseline;
-  width: 100%;
+body {
   height: 100%;
+  width: 100%;
 }
 
-a:webkit-any-link {
-  text-decoration: none;
+.video-banner {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+
 }
 
 .heading {
@@ -58,16 +59,72 @@ a:webkit-any-link {
 .video-banner > *{
   position: absolute;
   top: 0;
-  bottom: 0;
+  left: 0;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.video-banner > a > h1{
-  color: white; 
+.video-banner h1{
   text-align: center;
-  margin-top: 200px;
-  font-size: 100px;
+  margin-top: 350px;
+  color: #fff; 
+  font-family: 'Crimson Text', serif;
+  text-decoration: none;
+  font-size: 90px;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+div .modal-content {
+  background-color: rgba(32, 20, 0, 1.0);
+}
+
+div .modal-content h4, div .modal-content p, div .modal-content h2, div .modal-content h5 {
+  color: #fff;
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+div .modal-content {
+  text-align: center;
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+}
+
+label {
+  color: #fff;
+}
+
+/* Effect 1: Fade in and scale up */
+.modal.fade .modal-dialog {
+-webkit-transform: scale(0.7) !important;
+-moz-transform: scale(0.7) !important;
+-ms-transform: scale(0.7) !important;
+transform: scale(0.7) !important;
+opacity: 0 !important;
+-webkit-transition: all 1s !important;
+-moz-transition: all 1s !important;
+transition: all 1s !important;
+}
+
+.modal.fade.in .modal-dialog {
+-webkit-transform: scale(1) !important;
+-moz-transform: scale(1) !important;
+-ms-transform: scale(1) !important;
+transform: scale(1) !important;
+opacity: 1 !important;
+}
+
+.dropdown {
+  float: right;
+}
+
+#root {
+  background-image: url('http://il6.picdn.net/shutterstock/videos/11313464/thumb/1.jpg')
 }
 
 .App-logo {

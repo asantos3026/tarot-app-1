@@ -31,7 +31,7 @@ export default class QuestionForm extends Component {
           </Col>
         </FormGroup>
 
-        <DropdownButton title="choose a layout" id="layoutDropdown">
+        <DropdownButton title="Choose A Layout" id="layoutDropdown">
              <MenuItem eventKey="CELTIC_CROSS" onSelect={this.selectLayout.bind(this)}>Celtic Cross</MenuItem>
              <MenuItem divider />
              <MenuItem eventKey="TETRAKTYS" onSelect={this.selectLayout.bind(this)}>Tetraktys</MenuItem>
@@ -39,6 +39,10 @@ export default class QuestionForm extends Component {
              <MenuItem eventKey="YOU_ME_US" onSelect={this.selectLayout.bind(this)}>You, Me, Us</MenuItem>
              <MenuItem divider />
              <MenuItem eventKey="CAREER_PATH" onSelect={this.selectLayout.bind(this)}>Career Path</MenuItem>
+             <MenuItem divider />
+             <MenuItem eventKey="RELATIONSHIP_SPREAD" onSelect={this.selectLayout.bind(this)}>Relationship Spread</MenuItem>
+             <MenuItem divider />
+             <MenuItem eventKey="SELF_HEALING" onSelect={this.selectLayout.bind(this)}>Self Healing</MenuItem>
         </DropdownButton>
 
         <FormGroup>

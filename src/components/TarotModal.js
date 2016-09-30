@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Name } from './QuestionForm'
 import { Modal, Button } from 'react-bootstrap'
 
 export default class TarotModal extends Component { 
@@ -14,7 +14,7 @@ hideModal() {
         dialogClassName="custom-modal">
 
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-lg">Modal heading</Modal.Title>
+          <Modal.Title id="contained-modal-title-lg">Your Reading</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
