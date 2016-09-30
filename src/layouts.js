@@ -48,4 +48,31 @@ const CAREER_PATH = [
 
 ]
 
-export { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH}
+const RELATIONSHIP_SPREAD = [
+{ x: 1, y: 2, sideways: false },
+{ x: 2, y: 2, sideways: false },
+{ x: 3, y: 2, sideways: false },
+{ x: 5, y: 2, sideways: false },
+{ x: 6, y: 2, sideways: false },
+{ x: 7, y: 2, sideways: false },
+{ x: 2, y: 0, sideways: false },
+{ x: 6, y: 0, sideways: false },
+{ x: 2, y: 4, sideways: false },
+{ x: 6, y: 4, sideways: false },
+{ x: 2, y: 6, sideways: false },
+{ x: 6, y: 6, sideways: false },
+{ x: 2, y: 7, sideways: true },
+{ x: 6, y: 7, sideways: true },
+{ x: 4, y: 5, sideways: false },
+]
+
+const SELF_HEALING = [
+{ x: 4, y: 5, sideways: false },
+{ x: 2, y: 5, sideways: false },
+{ x: 6, y: 5, sideways: false },
+{ x: 3, y: 3, sideways: false },
+{ x: 5, y: 3, sideways: false },
+{ x: 4, y: 1, sideways: false },
+]
+
+export { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH, RELATIONSHIP_SPREAD, SELF_HEALING}

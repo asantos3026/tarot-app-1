@@ -14,14 +14,14 @@ import CARDS from './cardinfo'
 // import { CELTIC_CROSS } from './layouts'
 // import { CELTIC_CROSS_DES } from './positioninfo'
 
-import { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH } from './layouts'
-import { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES } from './positioninfo'
+import { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH, RELATIONSHIP_SPREAD, SELF_HEALING } from './layouts'
+import { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES, RELATIONSHIP_SPREAD_DES, SELF_HEALING_DES } from './positioninfo'
 
 class App extends Component {
   constructor(props) {
     super(props)
-    this.layouts = { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH }
-    this.positions = { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES }
+    this.layouts = { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH, RELATIONSHIP_SPREAD, SELF_HEALING }
+    this.positions = { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES, RELATIONSHIP_SPREAD_DES, SELF_HEALING_DES }
     this.currentLayout = "CELTIC_CROSS"
     this.state = { question: '', name: '', formSubmitted: false, cards: [], showNavbarModal: false }
   }

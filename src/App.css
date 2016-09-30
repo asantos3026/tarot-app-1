@@ -1,7 +1,6 @@
 body {
   height: 100%;
   width: 100%;
-  background-color: red;
 }
 
 .video-banner {
@@ -30,13 +29,30 @@ body {
   font-size: 90px;
 }
 
-
-a {
-  text-decoration: none;
-  color: white;
+.modal {
+  background-color: rgba(0, 0, 0, .8);
 }
 
+div .modal-content {
+  background-color: rgba(32, 20, 0, 1.0);
+}
 
+div .modal-content h4, div .modal-content p, div .modal-content h2, div .modal-content h5 {
+  color: #fff;
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+div .modal-content {
+  text-align: center;
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+}
+
+label {
+  color: #fff;
+}
 
 /* Effect 1: Fade in and scale up */
 .modal-effect {
@@ -48,6 +64,10 @@ a {
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
   transition: all 1s;
+}
+
+.dropdown {
+  float: right;
 }
 
 .md-show.md-effect-1 .md-content {
