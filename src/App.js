@@ -11,16 +11,18 @@ import NavbarModal from './components/NavbarModal.js'
 import CARDS from './cardinfo'
 // console.log( CARDS.map( c => `.${c.cardClassName} { background-image: url("${c.image}"); }` ).join( "\n"))
 
-import { CELTIC_CROSS } from './layouts'
-import { CELTIC_CROSS_DES } from './positioninfo'
+// import { CELTIC_CROSS } from './layouts'
+// import { CELTIC_CROSS_DES } from './positioninfo'
 
-// import { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH } from './layouts'
-// import { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES } from './positioninfo'
+import { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH } from './layouts'
+import { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES } from './positioninfo'
 
 class App extends Component {
   constructor(props) {
     super(props)
-
+    this.layouts = { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH }
+    this.positions = { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES }
+    this.currentLayout = "CELTIC_CROSS"
     this.state = { question: '', name: '', formSubmitted: false, cards: [], showNavbarModal: false }
   }
 
@@ -66,7 +68,7 @@ class App extends Component {
     if( this.state.formSubmitted ) {
       return <TarotContainer {...this.state} flipCard={this.displayCard.bind(this)} />
     } else {
-      return <div>Landing page content</div>
+      return <div className="landing-page"><img src="https://media.giphy.com/media/h9FPJ4PMvNRRK/giphy.gif" /></div>
     }
   }
 
@@ -74,7 +76,7 @@ class App extends Component {
     if( this.state.showNavbarModal ) {
       return ( 
         <NavbarModal hideNavbarModal={this.hideNavbarModal.bind(this)}> 
-          <QuestionForm submitForm={this.questionFormSubmitted.bind(this)} />
+          <QuestionForm redrawCards={ this.drawCards.bind(this) } submitForm={this.questionFormSubmitted.bind(this)} />
         </NavbarModal>
       ) 
     } else {
@@ -83,12 +85,14 @@ class App extends Component {
   }
 
   questionFormSubmitted(question, name) {
-    this.setState({ question, name, formSubmitted: true, cards: this.drawCards(), showNavbarModal: false })
+    this.setState({ question, name, formSubmitted: true, cards: this.drawCards(this.currentLayout), showNavbarModal: false })
   }
 
-  drawCards() {
-    const layout = CELTIC_CROSS
-    const position = CELTIC_CROSS_DES
+  drawCards(layoutName) {
+    if (layoutName) { this.currentLayout = layoutName } 
+
+    const layout = this.layouts[layoutName]
+    const position = this.positions[layoutName+'_DES']
 
     return  CARDS.slice( 0, layout.length ).map( (card, index) => 
       Object.assign( {}, card, { 
