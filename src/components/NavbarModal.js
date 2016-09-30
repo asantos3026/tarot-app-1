@@ -21,7 +21,7 @@ class NavbarModal extends Component {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button onClick={this.hideNavbarModal}>Close</Button>
+          <Button onClick={this.hideNavbarModal.bind(this)}>Close</Button>
         </Modal.Footer>
       </Modal>
     )
