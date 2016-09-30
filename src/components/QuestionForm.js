@@ -31,7 +31,7 @@ export default class QuestionForm extends Component {
           </Col>
         </FormGroup>
 
-        <DropdownButton title="choose a layout" id="layoutDropdown">
+        <DropdownButton title="Choose A Layout" id="layoutDropdown">
              <MenuItem eventKey="CELTIC_CROSS" onSelect={this.selectLayout.bind(this)}>Celtic Cross</MenuItem>
              <MenuItem divider />
              <MenuItem eventKey="TETRAKTYS" onSelect={this.selectLayout.bind(this)}>Tetraktys</MenuItem>

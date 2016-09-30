@@ -1,13 +1,42 @@
-video {
-  display: inline-block;
-  vertical-align: baseline;
-  width: 100%;
+body {
   height: 100%;
+  width: 100%;
+  background-color: red;
 }
 
-a:webkit-any-link {
-  text-decoration: none;
+.video-banner {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+
 }
+
+.video-banner .video-banner-background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-banner h1{
+  text-align: center;
+  margin-top: 350px;
+  color: #fff; 
+  font-family: 'Crimson Text', serif;
+  text-decoration: none;
+  font-size: 90px;
+}
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+
 
 /* Effect 1: Fade in and scale up */
 .modal-effect {
@@ -29,20 +58,6 @@ a:webkit-any-link {
   opacity: 1;
 }
 
-.video-banner > *{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  min-height: 100%;
-}
-
-.video-banner > a > h1{
-  color: white; 
-  text-align: center;
-  margin-top: 200px;
-  font-size: 100px;
-}
 
 .App-logo {
   height: 25px;

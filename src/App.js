@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Grid } from 'react-bootstrap';
 import { default as Video } from 'react-html5video';
 import _ from 'lodash';
 
@@ -38,9 +37,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Grid>
           {this.getChild()}
-        </Grid>
         {this.getModal()}
       </div>
     )
@@ -50,11 +47,13 @@ class App extends Component {
     if( this.state.formSubmitted ) {
       return <TarotContainer {...this.state} flipCard={this.displayCard.bind(this)} />
     } else {
-      return (
+      return (  
       <div className="video-banner">
-        <Video autoPlay loop muted poster="">
-          <source src="https://s3.amazonaws.com/distill-videos/videos/processed/1716/Northernlights2_HD.mp4.mp4" type="video/mp4" />
-        </Video>
+        <div className="video-banner-background">
+          <Video autoPlay loop muted poster="">
+            <source src="https://s3.amazonaws.com/distill-videos/videos/processed/1716/Northernlights2_HD.mp4.mp4" type="video/mp4" />
+          </Video>
+        </div>
         <a href="#" onClick={this.showNavbarModal.bind(this)}><h1>What Answers Do You Seek?</h1></a> 
       </div>
       )

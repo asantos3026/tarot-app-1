@@ -13,7 +13,7 @@ class NavbarModal extends Component {
         dialogClassName="custom-modal">
 
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-lg">Modal heading</Modal.Title>
+          <Modal.Title id="contained-modal-title-lg">Ms. Cleo's Divine Secrets</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
