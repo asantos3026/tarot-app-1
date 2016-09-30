@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Grid } from 'react-bootstrap';
 import { default as Video } from 'react-html5video';
 import _ from 'lodash';
 
@@ -15,14 +14,14 @@ import CARDS from './cardinfo'
 // import { CELTIC_CROSS } from './layouts'
 // import { CELTIC_CROSS_DES } from './positioninfo'
 
-import { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH } from './layouts'
-import { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES } from './positioninfo'
+import { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH, RELATIONSHIP_SPREAD, SELF_HEALING } from './layouts'
+import { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES, RELATIONSHIP_SPREAD_DES, SELF_HEALING_DES } from './positioninfo'
 
 class App extends Component {
   constructor(props) {
     super(props)
-    this.layouts = { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH }
-    this.positions = { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES }
+    this.layouts = { CELTIC_CROSS, TETRAKTYS, YOU_ME_US, CAREER_PATH, RELATIONSHIP_SPREAD, SELF_HEALING }
+    this.positions = { CELTIC_CROSS_DES, TETRAKTYS_DES, YOU_ME_US_DES, CAREER_PATH_DES, RELATIONSHIP_SPREAD_DES, SELF_HEALING_DES }
     this.currentLayout = "CELTIC_CROSS"
     this.state = { question: '', name: '', formSubmitted: false, cards: [], showNavbarModal: false }
   }
@@ -38,9 +37,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Grid>
           {this.getChild()}
-        </Grid>
         {this.getModal()}
       </div>
     )
@@ -50,11 +47,13 @@ class App extends Component {
     if( this.state.formSubmitted ) {
       return <TarotContainer {...this.state} flipCard={this.displayCard.bind(this)} />
     } else {
-      return (
+      return (  
       <div className="video-banner">
-        <Video autoPlay loop muted poster="">
-          <source src="https://s3.amazonaws.com/distill-videos/videos/processed/1716/Northernlights2_HD.mp4.mp4" type="video/mp4" />
-        </Video>
+        <div className="video-banner-background">
+          <Video autoPlay loop muted poster="">
+            <source src="https://s3.amazonaws.com/distill-videos/videos/processed/1716/Northernlights2_HD.mp4.mp4" type="video/mp4" />
+          </Video>
+        </div>
         <a href="#" onClick={this.showNavbarModal.bind(this)}><h1>What Answers Do You Seek?</h1></a> 
       </div>
       )
