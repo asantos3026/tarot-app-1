@@ -6,8 +6,8 @@ import CardComponent from './CardComponent'
 export default class DescriptionContainer extends Component {
   render() {
     return (
-      <div>
-        <h2>Description</h2>
+      <div className="description-container">
+        <h2 className="description-heading">Description</h2>
         {this.showCards()}
       </div>
     )
@@ -18,7 +18,6 @@ export default class DescriptionContainer extends Component {
 
     return cards.filter( card => card.displayed ).map( (card, index) =>
       <div key={`card-description-${index}`}>
-        <CardComponent {...card} key={`image-${index}`} />
         <CardDescription {...card} key={`description-${index}`} />
       </div>
     )

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Media, image } from 'react-bootstrap'
 
 export default class CardDescription extends Component {
   render() {
@@ -6,9 +7,16 @@ export default class CardDescription extends Component {
 
     return (
       <div className='card-description'>
-        <h4>{name}</h4>
-        <h5>{this.props.positionDescription}</h5>
-        <p>{upright ? this.props.normalDescription : this.props.reverseDescription} </p>
+        <Media>
+            <Media.Left>
+               <img width={130} height={190} src={this.props.image} alt=""/>
+             </Media.Left>
+             <Media.Body>
+               <Media.Heading>{name}</Media.Heading>
+               <p>{this.props.positionDescription}</p>
+               <p>{this.props.normalDescription}</p>
+             </Media.Body>
+        </Media>
       </div>
     )
   }
